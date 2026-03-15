@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace App.Repositories.User
 {
-    public class Users
+    public class Users:BaseEntity<int>
+
     {
         public int Id { get; set; }
         public string UserName { get; set; } = default!;

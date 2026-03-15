@@ -13,3 +13,35 @@ C:\Users\Yusuf\source\repos\Nlayer-API-WEB\Services\obj\Debug\net8.0\App.Service
 C:\Users\Yusuf\source\repos\Nlayer-API-WEB\Services\obj\Debug\net8.0\refint\App.Services.dll
 C:\Users\Yusuf\source\repos\Nlayer-API-WEB\Services\obj\Debug\net8.0\App.Services.pdb
 C:\Users\Yusuf\source\repos\Nlayer-API-WEB\Services\obj\Debug\net8.0\ref\App.Services.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.csproj.AssemblyReference.cache
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.AssemblyInfoInputs.cache
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.AssemblyInfo.cs
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.csproj.CoreCompileInputs.cache
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.sourcelink.json
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\refint\App.Services.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.pdb
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Services.deps.json
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Services.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Services.pdb
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Repositories.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Repositories.pdb
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Serv.164048D1.Up2Date
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\ref\App.Services.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Services.deps.json
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Services.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Services.pdb
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Repositories.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\bin\Debug\net8.0\App.Repositories.pdb
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.csproj.AssemblyReference.cache
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.AssemblyInfoInputs.cache
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.AssemblyInfo.cs
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.csproj.CoreCompileInputs.cache
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.sourcelink.json
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Serv.164048D1.Up2Date
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\refint\App.Services.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\App.Services.pdb
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Services\obj\Debug\net8.0\ref\App.Services.dll

@@ -10,6 +10,10 @@ using FluentValidation.AspNetCore;
 using App.Services;
 using App.Services.Mapping;
 using App.Repositories.Services;
+using Scalar.AspNetCore;
+using App.Services.User;
+using App.Repositories.User;
+using App.Services.Auth;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +27,17 @@ builder.Services.AddControllers(Options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers(options => options.Filters.Add<FluentValidationFilter>());
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(
+            new System.Text.Json.Serialization.JsonStringEnumConverter());
+
+    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+
+});
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddAuthentication(JwtBearerDefaults.);
+
 
 
 // Swagger
@@ -47,6 +62,9 @@ builder.Services.AddRepositories(builder.Configuration)
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IServiceRecordRepository, ServiceRecordRepository>();
 builder.Services.AddScoped<App.Services.Services.IServiceRecordService, App.Services.Services.ServiceRecordService>();
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+
+
 // CORS policy
 builder.Services.AddCors(options =>
 {
@@ -63,8 +81,14 @@ var app = builder.Build();
 // Configure middleware pipeline
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();     
+     app.UseSwagger();
+     app.UseSwaggerUI();
+    app.UseSwagger(options =>
+    {
+        // Scalar varsayýlan olarak bu adresi arar, o yüzden yolu deðiþtiriyoruz:
+        options.RouteTemplate = "openapi/{documentName}.json";
+    });
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();

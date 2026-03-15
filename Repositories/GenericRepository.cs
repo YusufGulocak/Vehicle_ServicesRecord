@@ -13,10 +13,11 @@ namespace App.Repositories
     {
         protected AppDbContext Context = context;
         private readonly DbSet<T> _dbSet=context.Set<T>();
-        public Task<Boolean> AnyAsync(int id )
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
         {
-            return _dbSet.AnyAsync(predicate);
+            return await _dbSet.AnyAsync(expression);
         }
+
         public async ValueTask AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);

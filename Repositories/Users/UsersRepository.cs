@@ -10,17 +10,46 @@ namespace App.Repositories.User
 {
     public class UsersRepository(AppDbContext context) : GenericRepository<Users>(context), IUsersRepository
     {
-        public async Task<List<Users>> GetAllAsync() 
+        public async Task AddAsync(Users user)
         {
-            return await Context.Users.AsNoTracking().ToListAsync();    
+            await context.Users.AddAsync(user);
         }
-        public void Update(Users users) 
+
+        public async Task<Users?> GetByIdAsync(int id)
         {
-            Context.Users.Update(users);
+            return await context.Users.FindAsync(id);
         }
-        public void Delete(Users users) 
+
+        public async Task<List<Users>> GetAllAsync()
         {
-            Context.Users.Remove(users);
+            return await context.Users.ToListAsync();
+        }
+
+        public IQueryable<Users> GetAll()
+        {
+            return context.Users.AsQueryable();
+        }
+
+        public void Delete(Users user)
+        {
+            context.Users.Remove(user);
+        }
+
+        public async Task<bool> UsernameExistsAsync(string username)
+        {
+            return await context.Users.AnyAsync(x => x.UserName == username);
+        }
+
+        public async Task<bool> EmailExistsAsync(string email)
+        {
+            return await context.Users.AnyAsync(x => x.Email == email);
+        }
+
+        public async Task<Users?> GetByUsernameOrEmailAsync(string value)
+        {
+            return await context.Users
+                .FirstOrDefaultAsync(x =>
+                    x.UserName == value || x.Email == value);
         }
     }
 }

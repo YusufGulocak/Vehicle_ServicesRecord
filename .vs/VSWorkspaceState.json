@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\App.API",
+    "\\Repositories",
+    "\\Repositories\\ServiceRecord",
+    "\\Repositories\\Users",
+    "\\Repositories\\Vehicles",
+    "\\Services",
+    "\\Services\\ServiceRecord",
+    "\\Services\\User"
+  ],
+  "PreviewInSolutionExplorer": false
+}

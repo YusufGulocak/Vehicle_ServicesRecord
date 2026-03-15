@@ -22,12 +22,19 @@ namespace App.Repositories
             modelBuilder.Entity<ServiceRecord>()
                 .Property(s => s.Cost)
                 .HasPrecision(18, 2); // 18 basamak, 2 ondalık
-           
+
+            modelBuilder.Entity<Users>(entity => {
+                entity.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+            });
+
+
 
         }
 
         public DbSet<ServiceRecord> serviceRecords { get; set; } = default!;
         public DbSet<Users> Users { get; set; } = default!;
+       
+
        
     }
     

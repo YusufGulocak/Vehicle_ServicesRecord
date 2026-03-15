@@ -12,3 +12,33 @@ C:\Users\Yusuf\source\repos\Nlayer-API-WEB\Repositories\obj\Debug\net8.0\refint\
 C:\Users\Yusuf\source\repos\Nlayer-API-WEB\Repositories\obj\Debug\net8.0\App.Repositories.pdb
 C:\Users\Yusuf\source\repos\Nlayer-API-WEB\Repositories\obj\Debug\net8.0\App.Repositories.genruntimeconfig.cache
 C:\Users\Yusuf\source\repos\Nlayer-API-WEB\Repositories\obj\Debug\net8.0\ref\App.Repositories.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.csproj.AssemblyReference.cache
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.AssemblyInfoInputs.cache
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.AssemblyInfo.cs
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.sourcelink.json
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\refint\App.Repositories.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.pdb
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\bin\Debug\net8.0\App.Repositories.deps.json
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\bin\Debug\net8.0\App.Repositories.runtimeconfig.json
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\bin\Debug\net8.0\App.Repositories.dll
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\bin\Debug\net8.0\App.Repositories.pdb
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.genruntimeconfig.cache
+C:\Users\Yusuf\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\ref\App.Repositories.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\bin\Debug\net8.0\App.Repositories.deps.json
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\bin\Debug\net8.0\App.Repositories.runtimeconfig.json
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\bin\Debug\net8.0\App.Repositories.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\bin\Debug\net8.0\App.Repositories.pdb
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.csproj.AssemblyReference.cache
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.AssemblyInfoInputs.cache
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.AssemblyInfo.cs
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.csproj.CoreCompileInputs.cache
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.sourcelink.json
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\refint\App.Repositories.dll
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.pdb
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\App.Repositories.genruntimeconfig.cache
+D:\pc yedek\msssqlyedeklerim\source\repos\Vehicle_ServicesRecord\Repositories\obj\Debug\net8.0\ref\App.Repositories.dll

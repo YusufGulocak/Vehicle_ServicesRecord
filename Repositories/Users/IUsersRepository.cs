@@ -9,9 +9,18 @@ namespace App.Repositories.User
 {
     public interface IUsersRepository:IGenericRepository<Users>
     {
+        Task AddAsync(Users user);
+
+        Task<Users?> GetByIdAsync(int id);
         Task<List<Users>> GetAllAsync();
-        
-        void Update(Users users);
-        void Delete(Users users);
+
+        void Delete(Users user);
+
+        Task<bool> UsernameExistsAsync(string username);
+        Task<bool> EmailExistsAsync(string email);
+
+        Task<Users?> GetByUsernameOrEmailAsync(string value);
+
+        IQueryable<Users> GetAll();
     }
 }
