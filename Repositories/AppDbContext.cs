@@ -31,7 +31,7 @@ namespace App.Repositories
 
         }
 
-        public DbSet<ServiceRecord> serviceRecords { get; set; } = default!;
+        public DbSet<ServiceRecord> ServiceRecords { get; set; } = default!;
         public DbSet<Users> Users { get; set; } = default!;
        
 

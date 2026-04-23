@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* ── Butonlar ── */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn:hover:not(:disabled) { opacity: 0.85; }
+.btn-primary   { background: #2563eb; color: #fff; }
+.btn-secondary { background: #6b7280; color: #fff; }
+.btn-edit      { background: #f59e0b; color: #fff; }
+.btn-delete    { background: #ef4444; color: #fff; }
+.btn-sm        { padding: 5px 10px; font-size: 12px; }
+
+/* ── Auth (Login / Register) ── */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  width: 360px;
+}
+.auth-card h2 { margin-bottom: 24px; font-size: 22px; }
+.auth-link { margin-top: 16px; font-size: 13px; color: #6b7280; }
+.auth-link a { color: #2563eb; text-decoration: none; }
+
+/* ── Form ── */
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: #2563eb; }
+.error-msg { color: #ef4444; font-size: 13px; margin-bottom: 12px; }
+
+/* ── Page Layout ── */
+.page { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 12px;
+}
+.page-header h1 { font-size: 24px; }
+.header-actions { display: flex; gap: 8px; }
+.subtitle { color: #6b7280; font-size: 14px; margin-top: 4px; }
+.section-title { font-size: 18px; margin-bottom: 16px; }
+.loading { color: #6b7280; padding: 20px 0; }
+.empty-msg { color: #9ca3af; font-size: 14px; }
+
+/* ── Araç Grid ── */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.vehicle-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.vehicle-card:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+.vehicle-info { cursor: pointer; }
+.vehicle-info h3 { font-size: 16px; margin-bottom: 4px; }
+.vehicle-info p { font-size: 13px; color: #6b7280; }
+.plate { font-weight: 700; color: #1d4ed8 !important; font-size: 15px !important; }
+.year { font-size: 12px !important; }
+.card-actions { display: flex; gap: 6px; margin-top: 12px; }
+
+/* ── Servis Kayıtları ── */
+.record-list { display: flex; flex-direction: column; gap: 12px; }
+.record-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.record-date { font-size: 13px; color: #6b7280; }
+.record-cost { font-weight: 700; color: #059669; font-size: 15px; }
+.record-explanation { font-size: 14px; margin-bottom: 8px; }
+.record-footer { font-size: 12px; color: #9ca3af; margin-bottom: 10px; }
+
+/* ── Arama ── */
+.search-bar {
+  position: relative;
+  margin-bottom: 20px;
+}
+.search-bar input {
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+.search-bar input:focus { border-color: #2563eb; }
+.search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ── İstatistik Kartları ── */
+.stats-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 130px;
+}
+.stat-card--green { border-left: 4px solid #059669; }
+.stat-value { font-size: 20px; font-weight: 700; color: #111; }
+.stat-label { font-size: 12px; color: #6b7280; }
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  width: 460px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal h2 { margin-bottom: 20px; font-size: 18px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }

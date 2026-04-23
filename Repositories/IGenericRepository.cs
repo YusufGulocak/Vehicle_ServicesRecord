@@ -14,7 +14,7 @@ namespace App.Repositories
         IQueryable<T> GetAll();
         ValueTask<T?> GetByIdAsync(int id);
         ValueTask AddAsync(T entity);
-        void update (T entity);
+        void Update(T entity);
         void  Delete(T entitiy  );
     }
 }

@@ -38,7 +38,7 @@ namespace App.Repositories
             return _dbSet.FindAsync(id);
         }
 
-        public void update(T entity)
+        public void Update(T entity)
         {
             _dbSet.Update(entity);
         }

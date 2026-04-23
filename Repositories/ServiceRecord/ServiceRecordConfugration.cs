@@ -13,7 +13,7 @@ namespace App.Repositories.Services
     {
         public void Configure(EntityTypeBuilder<ServiceRecord> builder)
         {
-            builder.ToTable("Servicess");
+            builder.ToTable("ServiceRecords");
 
             builder.HasKey(s => s.Id);
 

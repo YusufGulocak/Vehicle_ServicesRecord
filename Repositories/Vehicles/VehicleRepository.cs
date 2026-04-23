@@ -1,10 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace App.Repositories.Vehicles
 {
@@ -15,24 +9,14 @@ namespace App.Repositories.Vehicles
             return await Context.Vehicles.AsNoTracking().ToListAsync();
         }
 
-        public  Task<List<Vehicle>> GetVehiclesByBrandAsync(string brand)
+        public Task<List<Vehicle>> GetVehiclesByBrandAsync(string brand)
         {
-            return  Context.Vehicles
+            return Context.Vehicles
                 .Where(v => v.Brand.Equals(brand, StringComparison.OrdinalIgnoreCase))
                 .ToListAsync();
         }
 
-        public void Update(Vehicle vehicle)
-        {
-                  
-            Context.Vehicles.Update(vehicle);
-         }
-        public void Delete(Vehicle vehicle)
-        {
-            Context.Vehicles.Remove(vehicle);
-        }
-
-        public async Task<Vehicle> GetByNumberPlateAsync(string numberPlate)
+        public async Task<Vehicle?> GetByNumberPlateAsync(string numberPlate)
         {
             return await Context.Vehicles
                 .AsNoTracking()

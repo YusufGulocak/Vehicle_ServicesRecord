@@ -64,7 +64,7 @@ namespace App.Repositories.Migrations
 
                     b.HasIndex("VehicleId");
 
-                    b.ToTable("Servicess", (string)null);
+                    b.ToTable("ServiceRecords", (string)null);
                 });
 
             modelBuilder.Entity("App.Repositories.User.Users", b =>

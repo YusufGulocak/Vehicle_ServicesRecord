@@ -1,49 +1,54 @@
-using App.Repositories;
 using App.Repositories.Extensions;
-using Microsoft.EntityFrameworkCore;
 using App.Services.Extensions;
 using System.Net;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using FluentValidation;
-using FluentValidation.AspNetCore;
 using App.Services;
 using App.Services.Mapping;
 using App.Repositories.Services;
 using Scalar.AspNetCore;
-using App.Services.User;
 using App.Repositories.User;
 using App.Services.Auth;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllers(Options =>
+builder.Services.AddControllers(options =>
 {
-    Options.Filters.Add<FluentValidationFilter>();
-    Options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;
-});
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddControllers(options => options.Filters.Add<FluentValidationFilter>());
-builder.Services.AddAutoMapper(typeof(MappingProfile));
-builder.Services.AddControllers().AddJsonOptions(options =>
+    options.Filters.Add<FluentValidationFilter>();
+    options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;
+}).AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.Converters.Add(
             new System.Text.Json.Serialization.JsonStringEnumConverter());
-
     options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
-
 });
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+// JWT Authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["AppSettings:Issuer"],
+            ValidAudience = builder.Configuration["AppSettings:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Token"]!))
+        };
+    });
+
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddAuthentication(JwtBearerDefaults.);
-
-
 
 // Swagger
 builder.Services.AddSwaggerGen(options =>
 {
-
     options.SupportNonNullableReferenceTypes();
     options.UseAllOfToExtendReferenceSchemas();
     options.MapType<HttpStatusCode>(() => new Microsoft.OpenApi.Models.OpenApiSchema
@@ -53,17 +58,14 @@ builder.Services.AddSwaggerGen(options =>
         Description = "HTTP status code"
     });
 });
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Repositories & Services
 builder.Services.AddRepositories(builder.Configuration)
                 .AddServices(builder.Configuration);
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddScoped<IServiceRecordRepository, ServiceRecordRepository>();
 builder.Services.AddScoped<App.Services.Services.IServiceRecordService, App.Services.Services.ServiceRecordService>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
-
 
 // CORS policy
 builder.Services.AddCors(options =>
@@ -78,43 +80,19 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Configure middleware pipeline
 if (app.Environment.IsDevelopment())
 {
-     app.UseSwagger();
-     app.UseSwaggerUI();
     app.UseSwagger(options =>
     {
-        // Scalar varsayýlan olarak bu adresi arar, o yüzden yolu deðiþtiriyoruz:
         options.RouteTemplate = "openapi/{documentName}.json";
+    });
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "v1");
     });
     app.MapScalarApiReference();
 }
 
-app.UseHttpsRedirection();
-
-app.UseCors("AllowAll");  // <<< ÖNEMLÝ: Authorization’dan önce olmalý
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-// Global exception handling middleware
-app.Use(async (context, next) =>
-{
-    try
-    {
-        await next();
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Exception: {ex.Message}");
-        context.Response.StatusCode = 500;
-        await context.Response.WriteAsync("Internal Server Error");
-    }
-});
-
-app.Run();
 app.UseExceptionHandler(config =>
 {
     config.Run(async context =>
@@ -125,12 +103,19 @@ app.UseExceptionHandler(config =>
         var error = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>();
         if (error != null)
         {
-            var ex = error.Error;
             await context.Response.WriteAsync(System.Text.Json.JsonSerializer.Serialize(new
             {
                 StatusCode = 500,
-                Message = ex.Message
+                error.Error.Message
             }));
         }
     });
 });
+
+app.UseHttpsRedirection();
+app.UseCors("AllowAll");
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();

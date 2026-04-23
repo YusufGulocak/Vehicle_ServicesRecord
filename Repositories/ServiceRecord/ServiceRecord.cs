@@ -1,17 +1,14 @@
 ﻿using App.Repositories.Vehicles;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace App.Repositories.Service
 {
-    public class ServiceRecord:BaseEntity<int>,IAuditEntity
+    public class ServiceRecord : BaseEntity<int>, IAuditEntity
     {
-        [Key]
-       public  int Id { get; set; }
         public int VehicleId { get; set; }
        public  DateTime ServiceDate { get; set; }
        public  string ProcessedBy { get; set; } = default!;
